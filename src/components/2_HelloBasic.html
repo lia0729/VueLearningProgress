@@ -15,7 +15,10 @@
     <img width="300" v-bind:src="imgUrl">
 
     <h2>This is line 3</h2><!--Bind event-->
-    <button v-on:click="test">test</button>
+    <button v-on:click="test">test1</button>
+    
+    <p><input type="text" v-model="msg"></p>
+    <button @click="test2(msg)">Alert Text Input</button>
 </div>
 
 <script type="text/javascript" src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
@@ -24,12 +27,16 @@
     const vm = new Vue({ 
         el: '#app',
         data:{ 
+            msg:'Input',
             msg1:'Hello message 1 !',
             imgUrl:'/Users/bowenlu/Documents/VUE/vue_test/src/assets/photo.jpeg'
         },
         methods:{
             test(){
                 alert('This is test')
+            },
+            test2(content){
+                alert(content)
             }
         }
     })
