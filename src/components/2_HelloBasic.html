@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02_HelloBasic</title>
+</head>
+<body>
+
+<div id="app"><!--view-->
+    <h2>This is line 1</h2>
+    <p>{{msg1}}</p> <!--The use of big bracket {{}}}-->
+    <p>{{msg1.toUpperCase()}}</p>
+
+    <h2>This is line 2</h2><!--Bind data-->
+    <img width="300" v-bind:src="imgUrl">
+
+    <h2>This is line 3</h2><!--Bind event-->
+    <button v-on:click="test">test</button>
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
+<script type="text/javascript">
+
+    const vm = new Vue({ 
+        el: '#app',
+        data:{ 
+            msg1:'Hello message 1 !',
+            imgUrl:'/Users/bowenlu/Documents/VUE/vue_test/src/assets/photo.jpeg'
+        },
+        methods:{
+            test(){
+                alert('This is test')
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
